@@ -9,7 +9,7 @@ return {
 				null_ls.builtins.diagnostics.eslint_d,
 				null_ls.builtins.completion.spell,
                 null_ls.builtins.diagnostics.rubocop,
-                null_ls.builtins.diagnostics.rubocop,
+                null_ls.builtins.formatting.rubocop,
 			},
 		})
 		vim.keymap.set("n", "<leader>fr", vim.lsp.buf.format, {})
