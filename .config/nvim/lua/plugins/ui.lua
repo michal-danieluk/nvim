@@ -13,7 +13,7 @@ return {
 		}
 		dashboard.section.buttons.val = {
 			dashboard.button("e", "  New file", "<cmd>ene <CR>"),
-			dashboard.button("SPC f o", "󰈞  Recently opened files"),
+			dashboard.button("SPC f o", "󰈞  Recently opened files", ":Telescope oldfiles<CR>"),
 			dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
 		}
 		local handle = io.popen("fortune")

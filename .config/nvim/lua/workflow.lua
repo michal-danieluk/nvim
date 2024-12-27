@@ -5,8 +5,8 @@ vim.keymap.set("n", "<leader>on", ":ObsidianTemplate note<cr> :lua vim.cmd([[1,/
 vim.keymap.set("n", "<leader>of", ":s/\\(# \\)[^_]*_/\\1/ | s/-/ /g<cr>")
 --
 -- search for files in full vault
-vim.keymap.set("n", "<leader>os", ":Telescope find_files search_dirs={\"/home/wdek/priv/obsidian/personal\"}<cr>")
-vim.keymap.set("n", "<leader>oz", ":Telescope live_grep search_dirs={\"/home/wdek/priv/obsidian/personal\"}<cr>")
+vim.keymap.set("n", "<leader>os", ':Telescope find_files search_dirs={"/home/wdek/priv/obsidian/personal"}<cr>')
+vim.keymap.set("n", "<leader>oz", ':Telescope live_grep search_dirs={"/home/wdek/priv/obsidian/personal"}<cr>')
 --
 -- search for files in notes (ignore zettelkasten)
 -- vim.keymap.set("n", "<leader>ois", ":Telescope find_files search_dirs={\"/Users/alex/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/ZazenCodes/notes\"}<cr>")
@@ -18,4 +18,9 @@ vim.keymap.set("n", "<leader>ok", ":!mv '%:p' /home/wdek/priv/obsidian/personal/
 -- delete file in current buffer
 vim.keymap.set("n", "<leader>odd", ":!rm '%:p'<cr>:bd<cr>")
 
-
+-- ChatGPT keymaps
+vim.keymap.set("n", "<leader>cg", ":ChatGPT<CR>", { desc = "Open ChatGPT" })
+vim.keymap.set("v", "<leader>ce", ":ChatGPTEditWithInstruction<CR>", { desc = "Edit with ChatGPT" })
+vim.keymap.set("v", "<leader>cx", ":ChatGPTExplain<CR>", { desc = "Explain selection with ChatGPT" })
+vim.keymap.set("v", "<leader>cc", ":ChatGPTCode<CR>", { desc = "Generate code with ChatGPT" })
+vim.keymap.set("n", "<leader>ch", ":Telescope chatgpt prompts<CR>", { desc = "ChatGPT prompt history" })

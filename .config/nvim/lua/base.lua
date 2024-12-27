@@ -22,8 +22,6 @@ vim.o.softtabstop = -1 -- If negative, shiftwidth value is used
 vim.o.list = true
 -- vim.o.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
 -- Makes neovim and host OS clipboard play nicely with each other
-vim.o.clipboard = "unnamedplus"
-
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true

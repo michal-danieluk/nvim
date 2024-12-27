@@ -1,12 +1,13 @@
 return {
 	"rebelot/kanagawa.nvim",
-    -- "sainnhe/gruvbox-material",
+	-- "sainnhe/gruvbox-material",
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
 		opts = {},
 	},
+	"szw/vim-maximizer",
 	{
 		"christoomey/vim-tmux-navigator",
 		cmd = {
@@ -24,16 +25,16 @@ return {
 			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 		},
 	},
-	{
-		"rcarriga/nvim-notify",
-		config = function()
-			require("notify").setup({
-				timeout = 5000,
-				background_colour = "#000000",
-				enabled = false,
-			})
-		end,
-	},
+	--	{
+	--		"rcarriga/nvim-notify",
+	--		config = function()
+	--			require("notify").setup({
+	--				timeout = 5000,
+	--				background_colour = "#000000",
+	--				enabled = false,
+	--			})
+	--		end,
+	--	},
 
 	{
 		"ziontee113/icon-picker.nvim",
@@ -51,9 +52,6 @@ return {
 			-- refer to the configuration section below
 		},
 	},
-
-	"jackMort/ChatGPT.nvim",
-
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },

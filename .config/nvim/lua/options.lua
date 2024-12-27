@@ -11,7 +11,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- it makes file executeble form vim
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
---vim.keymap.set("n", "<leader>fo", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionaizer<CR>")
 
@@ -37,10 +36,11 @@ vim.keymap.set("n", "ss", ":split<Return><C-w>w")
 vim.keymap.set("n", "sv", ":vsplit<Return><C-w>w")
 vim.keymap.set("n", "se", "<C-w>=")
 vim.keymap.set("n", "sx", ":close<CR>", { silent = true })
-vim.keymap.set("n", "<leader>w", "<C-w><C-w>")
+vim.keymap.set("n", "<leader>w", "<C-w><C-w>", { desc = "Switch pane to next one" })
 
 -- vim-maximazier
 vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
+-- vim.keymap.set("n", "<leader>sm", "<C-w>|<CR>")
 -- write and quit
 -- To jest ważne i będę musiał znowu to wysłać
 vim.api.nvim_set_keymap("n", "QQ", ":q!<enter>", { noremap = false })
@@ -56,19 +56,36 @@ vim.keymap.set("n", "<leader>os", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quic
 vim.keymap.set("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Show location list of backlinks" })
 vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianTemplate<cr>", { desc = "Obsidian Templates" })
 
-vim.keymap.set("n", "<leader>zz", "<cmd>ZenMode<cr>", {desc = "ZenMode"})
-
+vim.keymap.set("n", "<leader>zz", "<cmd>ZenMode<cr>", { desc = "ZenMode" })
 
 -- icon picker
 vim.keymap.set("n", "<leader>ic", ":IconPickerNormal<cr>", { noremap = true, silent = true, desc = "Icon Picker" })
 
-function ColorMyPencils(color)
-    color = color or "catppuccin"
--- "kanagawa-dragon"  
-    vim.cmd.colorscheme(color)
+-- format code
+vim.keymap.set("n", "<leader>fr", function()
+	require("conform").format({
+		async = true,
+		lsp_fallback = true,
+	})
+end, { desc = "Format current buffer" })
 
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+--format on save
+--
+vim.api.nvim_create_autocmd("BufWritePre", {
+	callback = function()
+		require("conform").format({
+			lsp_fallback = true,
+		})
+	end,
+})
+
+function ColorMyPencils(color)
+	color = color or "catppuccin"
+	-- "kanagawa-dragon"
+	vim.cmd.colorscheme(color)
+
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 -- ColorMyPencils()
