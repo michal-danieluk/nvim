@@ -2,7 +2,7 @@ return {
 	"f4z3r/gruvbox-material.nvim",
 	name = "gruvbox-material",
 	lazy = false,
-	priority = 1000,
+	priority = 10000,
 	opts = {},
 	config = function()
 		-- values shown are defaults and will be used if not provided
