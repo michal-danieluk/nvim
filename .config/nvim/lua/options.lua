@@ -68,24 +68,3 @@ vim.keymap.set("n", "<leader>fr", function()
 		lsp_fallback = true,
 	})
 end, { desc = "Format current buffer" })
-
---format on save
---
-vim.api.nvim_create_autocmd("BufWritePre", {
-	callback = function()
-		require("conform").format({
-			lsp_fallback = true,
-		})
-	end,
-})
-
-function ColorMyPencils(color)
-	color = color or "catppuccin"
-	-- "kanagawa-dragon"
-	vim.cmd.colorscheme(color)
-
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-end
-
--- ColorMyPencils()
