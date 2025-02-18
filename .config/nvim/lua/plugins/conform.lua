@@ -10,7 +10,7 @@ return {
 				html = { "prettier" },
 				css = { "prettier" },
 				go = { "gofmt" }, -- Go formatter
-				ruby = { "rubocop" }, -- Ruby formatter
+				ruby = { "ruby_lsp" }, -- Ruby formatter
 				erb = { "erb_lint" }, -- Rails ERB templates
 			},
 			format_on_save = {
