@@ -19,7 +19,7 @@ vim.o.textwidth = 300
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = -1 -- If negative, shiftwidth value is used
-vim.o.list = true
+vim.o.list = false -- true
 -- vim.o.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
 -- Makes neovim and host OS clipboard play nicely with each other
 -- Case insensitive searching UNLESS /C or capital in search
@@ -32,8 +32,7 @@ vim.opt.conceallevel = 2
 -- vim.cmd.colorscheme "catppuccin"
 
 --vim.cmd()
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
-
+vim.o.completeopt = "menuone,noselect"
