@@ -21,7 +21,9 @@ return {
 				-- by the color scheme
 			},
 			signs = {
-				highlight = true, -- whether to highlight signs
+				force_background = false,
+				background_color = nil,
+				--				highlight = true, -- whether to highlight signs
 			},
 			customize = nil, -- customize the theme in any way you desire, see below what this
 			-- configuration accepts

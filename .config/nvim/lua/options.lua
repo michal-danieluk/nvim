@@ -50,11 +50,11 @@ vim.api.nvim_set_keymap("n", "<leader>ga", ":Git add . <CR>", { noremap = false 
 vim.api.nvim_set_keymap("n", "<leader>gc", ':Git commit -m "', { noremap = false })
 vim.api.nvim_set_keymap("n", "<leader>gp", ":Git push -u origin HEAD<CR>", { noremap = false })
 
-vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "New Obsidian note" })
-vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianSearch<cr>", { desc = "Search Obsidian notes" })
-vim.keymap.set("n", "<leader>os", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quick Switch" })
-vim.keymap.set("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Show location list of backlinks" })
-vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianTemplate<cr>", { desc = "Obsidian Templates" })
+vim.keymap.set("n", "<leader>on", ":Obsidian new<cr>", { desc = "New Obsidian note" })
+vim.keymap.set("n", "<leader>oo", ":Obsidian search<cr>", { desc = "Search Obsidian notes" })
+vim.keymap.set("n", "<leader>os", ":Obsidian quick_switch<cr>", { desc = "Quick Switch" })
+vim.keymap.set("n", "<leader>ob", ":Obsidian backlinks<cr>", { desc = "Show location list of backlinks" })
+vim.keymap.set("n", "<leader>ot", ":Obsidian template<cr>", { desc = "Obsidian Templates" })
 
 vim.keymap.set("n", "<leader>zz", "<cmd>ZenMode<cr>", { desc = "ZenMode" })
 
